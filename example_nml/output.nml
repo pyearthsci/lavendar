@@ -1,0 +1,26 @@
+&jules_output
+    dump_period = 100
+    nprofiles = 1
+    output_dir = '../output/test'
+    run_id = 'test'
+/
+
+&jules_output_profile
+    file_period = 0
+    nvars = 24
+    output_main_run = .true.
+    output_period = 86400
+    output_spinup = .false.
+    output_type = 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M',
+                  'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M',
+                  'M', 'X'
+    profile_name = 'daily'
+    var = 'precip', 'smcl', 't_soil', 'tstar', 'fsmc', 'gpp', 'latent_heat',
+          'le', 'ftl_gb', 'ftl', 't1p5m_gb', 'lai', 'canht', 'qw1', 'resp_p',
+          'resp_s', 'npp', 'fqw', 'cropharvc', 'croprootc', 'cropreservec',
+          'cropstemc', 'cropleafc', 'cropyield'
+    var_name = 'precip', 'smcl', 't_soil', 'tstar', 'fsmc', 'gpp', 'latent_heat',
+               'le', 'ftl_gb', 'ftl', 't1p5m_gb', 'lai', 'canht', 'qw1',
+               'resp_p', 'resp_s', 'npp', 'fqw', 'cropharvc', 'croprootc',
+               'cropreservec', 'cropstemc', 'cropleafc', 'cropyield'
+/

@@ -1,0 +1,10 @@
+&jules_hydrology
+    l_pdm = .false.
+    l_top = .false., ,
+    l_wetland_ch4_npp = .false.
+    l_wetland_unfrozen = .false.
+    nfita = 20
+    ti_max = 10.0
+    ti_wetl = 1.5
+    zw_max = 6.0
+/

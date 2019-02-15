@@ -1,0 +1,6 @@
+*.nc
+*.p
+*.pyc
+.idea
+!output/model_truth/mod_truth.daily.nc
+!data/mod_truth.dump.20080101.nc

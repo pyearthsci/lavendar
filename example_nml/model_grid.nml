@@ -1,0 +1,19 @@
+&jules_input_grid
+    nx = 1
+    ny = 1
+/
+
+&jules_latlon
+    latitude = 41.1651
+    longitude = -96.4766
+/
+
+&jules_land_frac
+/
+
+&jules_model_grid
+/
+
+&jules_surf_hgt
+    zero_height = .true.
+/

@@ -1,0 +1,16 @@
+&jules_surface
+    beta1 = 0.83
+    beta2 = 0.93
+    fwe_c3 = 0.5
+    fwe_c4 = 20000.0
+    hleaf = 57000.0
+    hwood = 11000.0
+    iscrntdiag = 0
+    l_aggregate = .false.
+    l_anthrop_heat_src = .false.
+    l_elev_land_ice = .false.
+    l_elev_lw_down = .false.
+    l_epot_corr = .false.
+    l_land_ice_imp = .false.
+    l_point_data = .true.
+/

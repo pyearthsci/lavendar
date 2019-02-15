@@ -1,0 +1,27 @@
+&jules_vegetation
+    can_model = 4
+    can_rad_mod = 6
+    ignition_method = 1
+    ilayers = 10
+    l_bvoc_emis = .false.
+    l_gleaf_fix = .false.
+    l_ht_compete = .false.
+    l_inferno = .false.
+    l_irrig_dmd = .true.
+    irr_crop = 0
+    l_irrig_limit = .false.
+    l_landuse = .false.
+    l_leaf_n_resp_fix = .false.
+    l_nitrogen = .false.
+    l_o3_damage = .false.
+    l_phenol = .false.
+    phenol_period = 1
+    l_prescsow = .true.
+    l_scale_resp_pm = .true.
+    l_stem_resp_fix = .false.
+    l_trait_phys = .false.
+    l_trif_crop = .false.
+    l_trif_fire = .false.
+    l_triffid = .false.
+    l_vegcan_soilfx = .false.
+/

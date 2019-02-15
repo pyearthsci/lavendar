@@ -1,0 +1,8 @@
+&jules_soil_biogeochem
+    kaps = 5e-09
+    l_layeredc = .false.
+    l_q10 = .true.
+    l_soil_resp_lev2 = .false.
+    q10_soil = 2.0
+    soil_bgc_model = 1
+/

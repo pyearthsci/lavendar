@@ -1,0 +1,21 @@
+&jules_snow
+    can_clump = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    dtland = 2.0
+    frac_snow_subl_melt = 0
+    graupel_options = 0
+    i_snow_cond_parm = 0
+    kland_numerator = 0.3
+    l_et_metamorph = .false.
+    l_snow_infilt = .false.
+    l_snow_nocan_hc = .false.
+    l_snowdep_surf = .false.
+    lai_alb_lim_sn = 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5
+    maskd = 50.0
+    n_lai_exposed = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    nsmax = 0
+    rho_snow_const = 250.0
+    snow_hcap = 630000.0
+    snow_hcon = 0.265
+    unload_rate_cnst = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    unload_rate_u = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+/

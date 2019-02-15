@@ -1,0 +1,17 @@
+&jules_drive
+    data_start = '2007-01-01 06:00:00'
+    data_end = '2013-01-01 05:00:00'
+    data_period = 3600
+    file = '../data/mead_2007_2012_drive.dat'
+    nvars = 8
+    var = 'sw_down', 'lw_down', 'precip', 't', 'wind', 'pstar', 'q', 'diff_rad'
+    interp = 'nf', 'nf', 'nf', 'nf', 'nf', 'nf', 'nf', 'nf', 'nf'
+    l_daily_disagg = .false.
+    l_imogen = .false.
+    t_for_con_rain = 288.15
+    t_for_snow = 274.15
+    z1_tq_in = 2.0
+    l_perturb_driving = .false.
+    temperature_abs_perturbation = 0.0
+    precip_rel_perturbation = 1.0
+/

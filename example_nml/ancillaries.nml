@@ -1,0 +1,42 @@
+&jules_frac
+    file = '../data/tile_fractions_maize.dat'
+/
+
+&jules_soil_props
+    const_z = .true.
+    use_file = .false., .false., .false., .false., .false., .false., .false.,
+               .false., .false.
+    nvars = 9
+    var = 'b', 'sathh', 'satcon', 'sm_sat', 'sm_crit', 'sm_wilt', 'hcap',
+          'hcon', 'albsoil'
+    const_val = 6.63, 0.04946, 0.004715, 0.45815, 0.242433, 0.136328, 1185676.0,
+                0.226873, 0.133
+/
+
+&jules_top
+    const_val = 1.0, 6.0, 2.0
+    nvars = 3
+    use_file = .false., .false., .false.
+    var = 'fexp', 'ti_mean', 'ti_sig'
+/
+
+&jules_agric
+/
+
+&jules_crop_props
+    nvars = 3
+    use_file = .false., .false., .false.
+    var = 'cropttveg', 'cropttrep', 'cropsowdate'
+    var_name = ''
+    const_val = 888.4, 1138, 120
+/
+
+&jules_irrig
+    read_from_dump = .false.
+    read_file = .false.
+    const_frac_irr = 0.8
+/
+
+&jules_co2
+    co2_mmr = 0.0005941
+/
