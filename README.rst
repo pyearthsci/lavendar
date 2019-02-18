@@ -12,8 +12,15 @@ The data assimilation routines and minimization are included in :code:`fourdenva
 project you will require an installation of the JULES land surface model (more information on JULES can be found here:
 https://jules.jchmr.org/ ). Model specific routines for running JULES are found in :code:`jules.py` and
 :code:`run_jules.py`. The data assimilation experiment is setup in :code:`experiment_setup.py` with variables set for
-output directories, model parameters to be optimised, ensemble size and functions to extract observations for
-assimilation.
+output directories, model parameters, ensemble size and functions to extract observations for assimilation. The module
+:code:`run_experiment.py` runs the ensemble of model runs and exectures the experiment as defined by
+:code:`experiment_setup.py`. Some experiment specific plotting routines are also included in :code:`plot.py`.
+
+Data for running the JULES model can be found in the :code:`data/` directory, including driving data for the Mead maize
+FLUXNET site, a JULES dump file and a JULES land fraction file. There are 2 JULES namelist file directories
+:code:`example_nml` and :code:`williams_nml`. :code:`example_nml` is used as the directory for JULES runs in the example
+experiment included in the tutorial. :code:`williams_nml` was used to produce a "model truth" JULES run used for
+sampling psuedo observations in the tutorial example.
 
 experiment_setup.py
 ^^^^^^^^^^^^^^^^^^^
@@ -36,9 +43,6 @@ Plotting
 We have included some commands to plot output from this tutorial found in plot.py
 
 .. image:: output/plot/lai.png
-    :width: 100px
-    :align: center
-    :alt: alternate text
 
 .. image:: output/plot/gpp.png
 
@@ -47,3 +51,8 @@ We have included some commands to plot output from this tutorial found in plot.p
 .. image:: output/plot/harvc.png
 
 .. image:: output/plot/distributions.png
+
+Support
+-------
+
+In the case of any issues please contact: e.pinnington@reading.ac.uk
