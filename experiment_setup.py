@@ -12,6 +12,8 @@ import plot
 output_directory = os.getcwd()+'/output'
 # set directory containing JULES NML files
 nml_directory = os.getcwd()+'/example_nml'
+# set model executable
+model_exe = '/home/if910917/jules/models/jules4.8/build/bin/jules.exe'
 # set function to extract JULES modelled observations for prior JULES
 jules_hxb = observations.extract_jules_hxb
 # set function to extract prior ensemble of modelled observations

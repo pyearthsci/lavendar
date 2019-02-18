@@ -5,6 +5,8 @@ import os
 import sys
 import f90nml
 import glob
+# local modules:
+import experiment_setup as es
 
 
 class Jules():
@@ -18,7 +20,7 @@ class Jules():
     .. note:: You must have JULES installed on local system with a version of 4.8 or higher.
 
     """
-    def __init__(self, nml_dir, jules_exe='/home/if910917/jules/models/jules4.8/build/bin/jules.exe'):
+    def __init__(self, nml_dir, jules_exe=es.model_exe):
         self.nml_dir = nml_dir
         self.jules = jules_exe
         self.nml_dic = self.read_nml(nml_dir)
@@ -83,9 +85,9 @@ class Jules():
         return (out, err)
 
     def run_jules_print(self):
-        """Write all NML files to disk. Run JULES in a subprocess. Check output for fatal errors.
+        """Write all NML files to disk. Run JULES in a subprocess.
 
-        :return: stdout and stderr output from JULES model run.
+        :return: string confirming model run (str)
         :rtype: str
         """
 

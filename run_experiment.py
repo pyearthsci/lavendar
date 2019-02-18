@@ -49,8 +49,8 @@ def ens_member_run(ens_number_xi, seed_val=0, params=None, xa=False):
         sh.copy(file, out_dir)
     try:
         rj = rjda.RunJulesDa(params=params, values=xi, nml_dir=out_dir)
-        if not os.path.exists(es.output_directory+ens_dir+str(seed_val)):
-            os.makedirs(es.output_directory+ens_dir+str(seed_val))
+        if not os.path.exists(es.output_directory + ens_dir + str(seed_val)):
+            os.makedirs(es.output_directory + ens_dir + str(seed_val))
         rj.run_jules_dic(output_name='ens'+str(ens_number), out_dir=es.output_directory+ens_dir+str(seed_val))
         dumps = glob.glob(es.output_directory+ens_dir + str(seed_val) + '/ens'+str(ens_number)+'.dump*')
         for f in dumps:
@@ -59,7 +59,7 @@ def ens_member_run(ens_number_xi, seed_val=0, params=None, xa=False):
     except ValueError:
         sh.rmtree(out_dir)
         print 'Something went wrong at: ' + str(ens_number)
-    return 'ensemble member '+str(ens_number)+' run!'
+    return 'ensemble member '+ str(ens_number) + ' run!'
 
 
 def ens_run(x_ens, seed_val=0, xa=False, params=None):
