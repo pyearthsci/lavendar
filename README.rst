@@ -68,17 +68,45 @@ plotting output from the data assimilation experiments with :code:`save_plots` a
 Tutorial
 --------
 
-In this tutorial we run a twin experiment to recover 7 JULES model parameters from a known model truth.
+In this tutorial we run a twin experiment to recover 7 JULES model parameters from a known model truth. The tutorial
+focuses on the maize plant functional type within JULES-crop. We assimilate observations of for leaf area index, gross
+primary productivity and canopy height sampled from a "model truth". These are similar to the observations we expect to
+have for real site level data. The functions used to extract these observations and the JULES modelled estimate to these
+ observations are included in :code:`observations.py`. The rest of the setup can be seen within
+:code:`experiment_setup.py`.
+
+.. note::
+
+    To run this tutorial you must have a version of JULES installed on your system. The path to the executable for your
+    version of JULES must be included in the :code:`model_exe` variable in :code:`experiment_setup.py`.
 
 Running data assimilation
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We set the following variables in :code:`experiment_setup.py`
+Once the variables in :code:`experiment_setup.py` have been set it is possbile to run the default data assimilation
+experiment by moving into the :code:`lavendar/` directory and running the command:
+
+    python run_experiment.py run_xb run_xa plot
+
+This will run the full example data assimilation experiment, with the :code:`run_xb` argument running the prior mean
+JULES model, :code:`run_xa` running the analysis ensemble after the data assimilation has been performed and
+:code:`plot` saving plotting output from the :code:`save_plots` function in :code:`experiment_setup.py`.
 
 Plotting
 ^^^^^^^^
 
-We have included some commands to plot output from this tutorial found in plot.py
+Below we include the example plotting output from the tutorial exercise. For the first 4 plots below the Blue shading is
+ the prior ensemble spread (+/- 1 standard deviation), the orange shading is the posterior ensemble spread
+(+/- 1 standard deviation), the pink dots are observations with error bars and the dashed black line is the model truth.
+For all variables (including unobserved harvestable material) we can see we are much closer to the truth with the
+posterior estimate after data assimilation. Prior and posterior distributions for the 7 optimised parameters are shown
+in the final plot where light grey is the prior distribution, dark grey is the posterior distribution and the black
+dashed line is the model truth value. We can see that for this experiment all model parameters shift towards the model
+truth, except for the scale factor for dark respiration :code:`fd_io`. This is due to the fact that the
+assimilated observations are not giving any constraint on the dark respiration of the plant as all observations are
+averaged daily and we only have gross primary productivity and not net primary productivity. The parameters being
+optimised in this experiment can be changed in the :code:`opt_params` dictionary in :code:`experiment_setup.py`, make
+sure the index set in the :code:`opt_params` dictionary is for the the plant functional type that is being observed.
 
 .. image:: output/plot/lai.png
 
@@ -93,4 +121,4 @@ We have included some commands to plot output from this tutorial found in plot.p
 Support
 -------
 
-In the case of any issues please contact: e.pinnington@reading.ac.uk
+In the case of any issues or inquiries please contact: e.pinnington@reading.ac.uk
