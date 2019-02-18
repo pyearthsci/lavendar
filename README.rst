@@ -18,9 +18,10 @@ output directories, model parameters, ensemble size and functions to extract obs
 
 Data for running the JULES model can be found in the :code:`data/` directory, including driving data for the Mead maize
 FLUXNET site, a JULES dump file and a JULES land fraction file. There are 2 JULES namelist file directories
-:code:`example_nml` and :code:`williams_nml`. :code:`example_nml` is used as the directory for JULES runs in the example
-experiment included in the tutorial. :code:`williams_nml` was used to produce a "model truth" JULES run used for
-sampling psuedo observations in the tutorial example.
+:code:`example_nml` and :code:`williams_nml`. The :code:`example_nml` directory is used for JULES runs in the example
+experiment included in the tutorial. The :code:`williams_nml` directory was used to produce a "model truth" JULES run
+from which psuedo observations are sampled in the tutorial example. Output from the different JULES model runs are
+stored in the various subdirectories under the :code:`output/` directory.
 
 experiment_setup.py
 ^^^^^^^^^^^^^^^^^^^
