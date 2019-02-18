@@ -36,9 +36,8 @@ Plotting
 We have included some commands to plot output from this tutorial found in plot.py
 
 .. image:: output/plot/lai.png
-    :width: 200px
+    :width: 100px
     :align: center
-    :height: 100px
     :alt: alternate text
 
 .. image:: output/plot/gpp.png
