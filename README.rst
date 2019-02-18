@@ -35,6 +35,7 @@ optimised in the experiment are set in the dictionary :code:`opt_params`, in the
 defined as:
 
 .. code-block:: python
+
     opt_params = {'pft_params': {
                       'jules_pftparm': {
                           'neff_io': [7, 6.24155040e-04, (5e-05, 0.0015)],
@@ -46,6 +47,7 @@ defined as:
                           'delta_io': [2, -2.97701647e-01, (-2.0, 0.0)],
                           'mu_io': [2, 2.37351160e-02, (0.0, 1.0)],
                           'nu_io': [2, 4.16006288e+00, (0.0, 20.0)]}}}
+
 where each heading in the :code:`opt_params` dictionary corresponds to a JULES namelist filename and contains another
 dictiontary for the JULES namelists defined within that file. Each namelist heading contains a dictionary of the
 parameters to change within the corresponding namelist. The parameters hold a list of size 3 containing the index of
