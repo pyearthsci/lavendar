@@ -30,9 +30,10 @@ This module controls how the experiment will be run. Output and namelist directo
 and :code:`nml_directory`. The model executable path is set by :code:`model_exe`. The functions to exatract the mean
 prior model estimate to the assimilated observations, the ensemble of prior estimates to the observations and the
 assimilated observations are set by :code:`jules_hxb`, :code:`jules_hxb_ens` and :code:`obs_fn` respectively. These
-functions are defined in the :code:`observations.py` module and are experiment and model specific. The parameters to be
-optimised in the experiment are set in the dictionary :code:`opt_params`, in the tutorial experiment the dictionary is
-defined as:
+functions are defined in the :code:`observations.py` module and are experiment and model specific.
+
+The parameters to be optimised in the experiment are set in the dictionary :code:`opt_params`, in the tutorial
+experiment the dictionary is defined as:
 
 .. code-block:: python
 
@@ -50,8 +51,19 @@ defined as:
 
 where each heading in the :code:`opt_params` dictionary corresponds to a JULES namelist filename and contains another
 dictiontary for the JULES namelists defined within that file. Each namelist heading contains a dictionary of the
-parameters to change within the corresponding namelist. The parameters hold a list of size 3 containing the index of
+parameters to change within the namelist. The parameters hold a list of size 3 containing the index of
 the parameter to be optimised, the prior value to use for the parameter and the bounds (low, high) for the parameter.
+For example if we want to optimise the value of nitrogen use efficiency (:code:`neff_io`) for maize in JULES we have to
+first specify the filename where this parameter appears :code:`pft_params`. Then in the dictionary below
+:code:`pft_params` specify the namelist where the parameter appears :code:`jules_pftparm`. Then in the dictionary below
+:code:`jules_pftparm` specify :code:`neff_io` with a list of the maize plant functional type index, its prior value and
+its bounds.
+
+We specify the error set on the prior parameters with :code:`prior_err`, the ensemble size with
+:code:`ensemble_size`, the number of processors to use for the experiment with :code:`num_processes` and the seed value
+for any random perturbations performed in the experiment with :code:`seed_value`. We also set a function to save
+plotting output from the data assimilation experiments with :code:`save_plots` and a save directory with
+:code:`plot_output_dir`.
 
 Tutorial
 --------
