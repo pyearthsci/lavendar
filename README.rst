@@ -8,14 +8,15 @@ Ensemble Variational data assimilation for land surface models. In this README w
 Project overview
 ----------------
 
-The data assimilation routines and minimization are included in fourdenvar.py. For the example included in this project
-you will require an installation of the JULES land surface model, more information on JULES can be found here
-https://jules.jchmr.org/ model specific routines for running JULES are found in jules.py and run_jules.py. The data
-assimilation experiment is setup in experiment_setup.py with variables set for output directories, model parameters to
-be optimised, ensemble size and functions to extract observations for assimilation.
+The data assimilation routines and minimization are included in :code:`fourdenvar.py`. For the example included in this
+project you will require an installation of the JULES land surface model (more information on JULES can be found here:
+https://jules.jchmr.org/ ). Model specific routines for running JULES are found in :code:`jules.py` and
+:code:`run_jules.py`. The data assimilation experiment is setup in :code:`experiment_setup.py` with variables set for
+output directories, model parameters to be optimised, ensemble size and functions to extract observations for
+assimilation.
 
 experiment_setup.py
-*******************
+^^^^^^^^^^^^^^^^^^^
 
 Description of options in here
 
@@ -25,16 +26,20 @@ Tutorial
 In this tutorial we run a twin experiment to recover 7 JULES model parameters from a known model truth.
 
 Running data assimilation
-*************************
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We set the following variables in experiment_setup.py
+We set the following variables in :code:`experiment_setup.py`
 
 Plotting
-********
+^^^^^^^^
 
 We have included some commands to plot output from this tutorial found in plot.py
 
 .. image:: output/plot/lai.png
+    :width: 200px
+    :align: center
+    :height: 100px
+    :alt: alternate text
 
 .. image:: output/plot/gpp.png
 
