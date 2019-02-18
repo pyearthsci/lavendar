@@ -3,7 +3,7 @@ The Land Variational Ensemble Data Assimilation fRamework (LaVEnDAR)
 
 The Land Variational Ensemble Data Assimilation fRamework (LaVEnDAR) implements the method of Four-Dimensional
 Ensemble Variational data assimilation for land surface models. In this README we show an example of implementing
-4DEnVar with the JULES land surface model to perform a twin experiment.
+4DEnVar with the JULES land surface model.
 
 Project overview
 ----------------
@@ -13,20 +13,43 @@ project you will require an installation of the JULES land surface model (more i
 https://jules.jchmr.org/ ). Model specific routines for running JULES are found in :code:`jules.py` and
 :code:`run_jules.py`. The data assimilation experiment is setup in :code:`experiment_setup.py` with variables set for
 output directories, model parameters, ensemble size and functions to extract observations for assimilation. The module
-:code:`run_experiment.py` runs the ensemble of model runs and exectures the experiment as defined by
+:code:`run_experiment.py` runs the ensemble of model runs and executes the experiment as defined by
 :code:`experiment_setup.py`. Some experiment specific plotting routines are also included in :code:`plot.py`.
 
 Data for running the JULES model can be found in the :code:`data/` directory, including driving data for the Mead maize
 FLUXNET site, a JULES dump file and a JULES land fraction file. There are 2 JULES namelist file directories
 :code:`example_nml` and :code:`williams_nml`. The :code:`example_nml` directory is used for JULES runs in the example
 experiment included in the tutorial. The :code:`williams_nml` directory was used to produce a "model truth" JULES run
-from which psuedo observations are sampled in the tutorial example. Output from the different JULES model runs are
+from which pseudo observations are sampled in the tutorial example. Output from the different JULES model runs are
 stored in the various subdirectories under the :code:`output/` directory.
 
 experiment_setup.py
 ^^^^^^^^^^^^^^^^^^^
 
-Description of options in here
+This module controls how the experiment will be run. Output and namelist directories are set by :code:`output_directory`
+and :code:`nml_directory`. The model executable path is set by :code:`model_exe`. The functions to exatract the mean
+prior model estimate to the assimilated observations, the ensemble of prior estimates to the observations and the
+assimilated observations are set by :code:`jules_hxb`, :code:`jules_hxb_ens` and :code:`obs_fn` respectively. These
+functions are defined in the :code:`observations.py` module and are experiment and model specific. The parameters to be
+optimised in the experiment are set in the dictionary :code:`opt_params`, in the tutorial experiment the dictionary is
+defined as:
+
+.. code-block:: python
+    opt_params = {'pft_params': {
+                      'jules_pftparm': {
+                          'neff_io': [7, 6.24155040e-04, (5e-05, 0.0015)],
+                          'alpha_io': [7, 6.73249126e-02, (0, 1.0)],
+                          'fd_io': [7, 8.66181324e-03, (0.0001, 0.1)]}},
+                  'crop_params': {
+                      'jules_cropparm': {
+                          'gamma_io': [2, 2.07047321e+01, (0.0, 40.0)],
+                          'delta_io': [2, -2.97701647e-01, (-2.0, 0.0)],
+                          'mu_io': [2, 2.37351160e-02, (0.0, 1.0)],
+                          'nu_io': [2, 4.16006288e+00, (0.0, 20.0)]}}}
+where each heading in the :code:`opt_params` dictionary corresponds to a JULES namelist filename and contains another
+dictiontary for the JULES namelists defined within that file. Each namelist heading contains a dictionary of the
+parameters to change within the corresponding namelist. The parameters hold a list of size 3 containing the index of
+the parameter to be optimised, the prior value to use for the parameter and the bounds (low, high) for the parameter.
 
 Tutorial
 --------
