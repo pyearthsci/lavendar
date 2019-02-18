@@ -72,8 +72,7 @@ In this tutorial we run a twin experiment to recover 7 JULES model parameters fr
 focuses on the maize plant functional type within JULES-crop. We assimilate observations of for leaf area index, gross
 primary productivity and canopy height sampled from a "model truth". These are similar to the observations we expect to
 have for real site level data. The functions used to extract these observations and the JULES modelled estimate to these
- observations are included in :code:`observations.py`. The rest of the setup can be seen within
-:code:`experiment_setup.py`.
+observations are included in :code:`observations.py`. The rest of the setup can be seen within :code:`experiment_setup.py`.
 
 .. note::
 
@@ -86,6 +85,8 @@ Running data assimilation
 Once the variables in :code:`experiment_setup.py` have been set it is possbile to run the default data assimilation
 experiment by moving into the :code:`lavendar/` directory and running the command:
 
+.. code-block:: unix
+
     python run_experiment.py run_xb run_xa plot
 
 This will run the full example data assimilation experiment, with the :code:`run_xb` argument running the prior mean
@@ -96,7 +97,7 @@ Plotting
 ^^^^^^^^
 
 Below we include the example plotting output from the tutorial exercise. For the first 4 plots below the Blue shading is
- the prior ensemble spread (+/- 1 standard deviation), the orange shading is the posterior ensemble spread
+the prior ensemble spread (+/- 1 standard deviation), the orange shading is the posterior ensemble spread
 (+/- 1 standard deviation), the pink dots are observations with error bars and the dashed black line is the model truth.
 For all variables (including unobserved harvestable material) we can see we are much closer to the truth with the
 posterior estimate after data assimilation. Prior and posterior distributions for the 7 optimised parameters are shown
