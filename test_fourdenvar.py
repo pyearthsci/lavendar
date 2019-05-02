@@ -40,7 +40,7 @@ def plotcostone_ens_inc(vect=1):
     sns.set_style('whitegrid')
     power=np.arange(1,10,1)
     xlist = [10**(-x) for x in power]
-    jj = fdj.JulesTwinDA(assim=True)
+    jj = fdj.FourDEnVar(assim=True)
     #jj.output_dir="output/ens_run500"
     tstlist = [abs(test_cost_ens_inc(jj, x, vect)) for x in xlist]
     ax.semilogx(xlist, tstlist, 'k', marker='x', mew=1, ms=8)
@@ -63,7 +63,7 @@ def plotcost_ens_inc(vect=1):
     sns.set_style('whitegrid')
     power=np.arange(1,10,1)
     xlist = [10**(-x) for x in power]
-    jj = fdj.JulesTwinDA(assim=True)
+    jj = fdj.FourDEnVar(assim=True)
     #jj.output_dir="output/ens_run500"
     tstlist = [abs(test_cost_ens_inc(jj, x, vect)-1) for x in xlist]
     ax.loglog(xlist, tstlist, 'k', marker='x', mew=1, ms=8)

@@ -1,5 +1,7 @@
 The Land Variational Ensemble Data Assimilation fRamework (LaVEnDAR)
 ====================================================================
+.. image:: https://zenodo.org/badge/170909445.svg
+   :target: https://zenodo.org/badge/latestdoi/170909445
 
 The Land Variational Ensemble Data Assimilation fRamework (LaVEnDAR) implements the method of Four-Dimensional
 Ensemble Variational data assimilation for land surface models. In this README we show an example of implementing
@@ -50,7 +52,7 @@ experiment the dictionary is defined as:
                           'nu_io': [2, 4.16006288e+00, (0.0, 20.0)]}}}
 
 where each heading in the :code:`opt_params` dictionary corresponds to a JULES namelist filename and contains another
-dictiontary for the JULES namelists defined within that file. Each namelist heading contains a dictionary of the
+dictionary for the JULES namelists defined within that file. Each namelist heading contains a dictionary of the
 parameters to change within the namelist. The parameters hold a list of size 3 containing the index of
 the parameter to be optimised, the prior value to use for the parameter and the bounds (low, high) for the parameter.
 For example if we want to optimise the value of nitrogen use efficiency (:code:`neff_io`) for maize in JULES we have to
@@ -72,7 +74,8 @@ In this tutorial we run a twin experiment to recover 7 JULES model parameters fr
 focuses on the maize plant functional type within JULES-crop. We assimilate observations of for leaf area index, gross
 primary productivity and canopy height sampled from a "model truth". These are similar to the observations we expect to
 have for real site level data. The functions used to extract these observations and the JULES modelled estimate to these
-observations are included in :code:`observations.py`. The rest of the setup can be seen within :code:`experiment_setup.py`.
+observations are included in :code:`observations.py`. The rest of the setup can be seen within
+:code:`experiment_setup.py`.
 
 .. note::
 
@@ -82,7 +85,7 @@ observations are included in :code:`observations.py`. The rest of the setup can 
 Running data assimilation
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the variables in :code:`experiment_setup.py` have been set it is possbile to run the default data assimilation
+Once the variables in :code:`experiment_setup.py` have been set it is possible to run the default data assimilation
 experiment by moving into the :code:`lavendar/` directory and running the command:
 
 .. code-block:: unix
@@ -103,7 +106,7 @@ For all variables (including unobserved harvestable material) we can see we are 
 posterior estimate after data assimilation. Prior and posterior distributions for the 7 optimised parameters are shown
 in the final plot where light grey is the prior distribution, dark grey is the posterior distribution and the black
 dashed line is the model truth value. We can see that for this experiment all model parameters shift towards the model
-truth, except for the scale factor for dark respiration :code:`fd_io`. This is due to the fact that the
+truth, except for the scale factor for dark respiration (:code:`fd_io`). This is due to the fact that the
 assimilated observations are not giving any constraint on the dark respiration of the plant as all observations are
 averaged daily and we only have gross primary productivity and not net primary productivity. The parameters being
 optimised in this experiment can be changed in the :code:`opt_params` dictionary in :code:`experiment_setup.py`, make
