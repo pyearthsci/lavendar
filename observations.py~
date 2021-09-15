@@ -43,9 +43,9 @@ def extract_twin_data(mod_truth='output/model_truth/mod_truth.daily.nc', seed_va
     canht_obs = np.array([canht + np.random.normal(0.0, canht_err) for canht in canht_obs_tr])
     # define observation errors to use within data assimilation (will be used to create observation error covariance
     # matrix)
-    gpp_err = np.ones(len(gpp_obs)) * np.mean(gpp_obs[gpp_obs > 0]) * 0.1  # 2% error in mod obs
-    lai_err = np.ones(len(lai_obs)) * np.mean(lai_obs[lai_obs > 0]) * 0.05
-    canht_err = np.ones(len(canht_obs)) * np.mean(canht_obs[canht_obs > 0]) * 0.05
+    gpp_err = np.ones(len(gpp_obs)) * np.mean(gpp_obs[gpp_obs > 0]) * 0.02  # 2% error in mod obs
+    lai_err = np.ones(len(lai_obs)) * np.mean(lai_obs[lai_obs > 0]) * 0.02
+    canht_err = np.ones(len(canht_obs)) * np.mean(canht_obs[canht_obs > 0]) * 0.02
     # close netCDF file
     mod_dat.close()
     return {'obs': (gpp_obs, lai_obs, canht_obs), 'obs_err': (gpp_err, lai_err, canht_err), 'gpp_obs': gpp_obs,

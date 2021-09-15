@@ -2,6 +2,9 @@
 *.p
 *.pyc
 .idea
+*.bsub
+*.e
+*.o
 !output/model_truth/mod_truth.daily.nc
 !output/background/xb0.daily.nc
 !data/mod_truth.dump.20080101.nc

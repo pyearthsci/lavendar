@@ -90,7 +90,7 @@ experiment by moving into the :code:`lavendar/` directory and running the comman
 
 .. code-block:: unix
 
-    python run_experiment.py run_xb run_xa plot
+    python run_experiment.py 0 run_xb run_xa plot
 
 This will run the full example data assimilation experiment, with the :code:`run_xb` argument running the prior mean
 JULES model, :code:`run_xa` running the analysis ensemble after the data assimilation has been performed and
