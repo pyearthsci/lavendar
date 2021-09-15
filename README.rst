@@ -125,4 +125,4 @@ sure the index set in the :code:`opt_params` dictionary is for the the plant fun
 Support
 -------
 
-In the case of any issues or inquiries please contact: e.pinnington@reading.ac.uk
+In the case of any issues or inquiries please contact: ewan.pinnington@gmail.com
